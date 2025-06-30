@@ -1,0 +1,42 @@
+.ssebtn {
+    display: block;
+    margin: 2rem auto 1rem auto;
+}
+
+.ssetext {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.sseemails {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 500px;
+    height: 50vh;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+@media (max-width: 600px) {
+    .ssebtn {
+        margin: 1.5rem auto 1rem auto;
+    }
+    .ssetext {
+        font-size: medium;
+        margin-bottom: 0.5rem;
+    }
+    .sseemails {
+        width: 95vw;
+        height: 30vh;
+        max-height: none;
+    }
+}
