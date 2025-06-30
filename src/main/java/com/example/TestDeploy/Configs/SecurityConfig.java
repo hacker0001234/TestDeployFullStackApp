@@ -25,23 +25,10 @@ public class SecurityConfig {
                 )
                 .oauth2Login(oauth2LoginSpec -> oauth2LoginSpec
                         .loginPage("/oauth2/authorization/google")
-                        .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("http://localhost:5173/"))
-                        .authenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("http://localhost:5173/error"))
+                        .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/"))
+                        .authenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("/error"))
                 )
                 .build();
-    }
-
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        config.addExposedHeader(HttpHeaders.AUTHORIZATION);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-        return source;
     }
 
 }

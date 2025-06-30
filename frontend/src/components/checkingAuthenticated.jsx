@@ -5,7 +5,7 @@ export default function CheckingAuthenticated({children}){
     const [authenticated,setAuthenticated] = useState(null);
 
     useEffect(() => {
-        axios.get("http://localhost:9090/api/authentication/check", {withCredentials: true})
+        axios.get("https://microservice-lypk.onrender.com/api/authentication/check", {withCredentials: true})
             .then(response => setAuthenticated(response.data));
     }, []);
 
@@ -14,6 +14,6 @@ export default function CheckingAuthenticated({children}){
     }else if (authenticated){
         return children;
     }else {
-        return window.location.href ="http://localhost:9090/oauth2/authorization/google";
+        return window.location.href ="https://microservice-lypk.onrender.com/oauth2/authorization/google";
     }
 }

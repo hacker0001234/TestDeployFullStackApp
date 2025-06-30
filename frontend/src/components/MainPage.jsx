@@ -6,7 +6,7 @@ export default function MainPage() {
     const [email, setEmail] = useState("");
 
     const getEmail = () => {
-        axios.get("http://localhost:9090/api/test", {withCredentials: true})
+        axios.get("https://microservice-lypk.onrender.com/api/test", {withCredentials: true})
             .then(res => setEmail(res.data));
     }
     return (

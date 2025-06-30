@@ -10,14 +10,14 @@ export default function Websocket() {
     const [correctMessage, setCorrectMessage] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:9090/api/test", {withCredentials: true})
+        axios.get("https://microservice-lypk.onrender.com/api/test", {withCredentials: true})
             .then(res => setEmail(res.data));
     }, []);
 
     useEffect(() => {
         if (!email) return;
 
-        websocket.current = new WebSocket(`ws://localhost:9090/ws/message?phone=${email}`);
+        websocket.current = new WebSocket(`wss://microservice-lypk.onrender.com/ws/message?phone=${email}`);
 
         websocket.current.onmessage = (event) => {
             setMessages(prevState => [...prevState, event.data]);
