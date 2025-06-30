@@ -6,6 +6,7 @@ import MainPage from "./components/MainPage.jsx";
 import CheckingAuthenticated from "./components/checkingAuthenticated.jsx";
 import SSE from "./components/SSE.jsx";
 import Websocket from "./components/Websocket.jsx";
+import Error from "./components/Error.jsx";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path={"/"} element={<CheckingAuthenticated><MainPage/></CheckingAuthenticated>}/>
           <Route path={"/sse"} element={<CheckingAuthenticated><SSE/></CheckingAuthenticated>}/>
           <Route path={"/websocket"} element={<CheckingAuthenticated><Websocket/></CheckingAuthenticated>}/>
+          <Route path={"/error"} element={<Error/>}/>
       </Routes>
   </BrowserRouter>
   )

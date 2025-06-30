@@ -26,6 +26,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth2LoginSpec -> oauth2LoginSpec
                         .loginPage("/oauth2/authorization/google")
                         .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/"))
+                        .authenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("/error"))
                 )
                 .build();
     }
