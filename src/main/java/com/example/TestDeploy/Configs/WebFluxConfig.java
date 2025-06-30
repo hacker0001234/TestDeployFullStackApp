@@ -16,7 +16,7 @@ public class WebFluxConfig implements WebFluxConfigurer {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("https://microservice-lypk.onrender.com");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
