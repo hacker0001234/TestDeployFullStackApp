@@ -6,7 +6,7 @@ export default function SSE() {
     const [emails, setEmails] = useState([]);
 
     useEffect(() => {
-        const sse = new EventSourcePolyfill("https://microservice-lypk.onrender.com/api/sse", {withCredentials: true});
+        const sse = new EventSourcePolyfill("https://testdeployfullstackapp.onrender.com/api/sse", {withCredentials: true});
 
         sse.onmessage = (event) => {
             const email = event.data;
