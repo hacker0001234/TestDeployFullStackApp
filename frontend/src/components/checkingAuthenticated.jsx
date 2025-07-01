@@ -14,6 +14,6 @@ export default function CheckingAuthenticated({children}){
     }else if (authenticated){
         return children;
     }else {
-        return window.location.href ="https://microservice-lypk.onrender.com/oauth2/authorization/google";
+        return window.location.href ="https://microservice-lypk.onrender.com/login/oauth2/code/google";
     }
 }

@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   build: {
-    outDir: path.resolve(__dirname, 'TestDeploy/src/main/resources/static'), // або відповідно до твоєї структури
+    outDir: path.resolve(__dirname, '../src/main/resources/static'),
     emptyOutDir: true
   }
 })
